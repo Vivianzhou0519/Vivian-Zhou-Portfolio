@@ -1,4 +1,14 @@
 import SwiftUI
+import AppKit
+
+extension Font {
+    static func customFont(_ name: String, size: CGFloat) -> Font {
+        guard let customFont = NSFont(name: name, size: size) else {
+            return .system(size: size)
+        }
+        return Font(customFont)
+    }
+}
 
 struct ProjectDetailView: View {
     let project: Project
